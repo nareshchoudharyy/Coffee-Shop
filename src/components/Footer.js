@@ -10,13 +10,13 @@ export default function Footer() {
                         <h3 className="font-display text-2xl text-coffee mb-6">BREW & CO</h3>
                         <div className="flex justify-center gap-8">
                             {['Instagram', 'Facebook', 'Twitter'].map((social) => (
-                                <a
+                                <Link
                                     key={social}
                                     href="#"
                                     className="text-charcoal/60 hover:text-coffee transition-colors"
                                 >
                                     {social}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -24,10 +24,10 @@ export default function Footer() {
                     {/* Essential Links */}
                     <div className="max-w-2xl mx-auto">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-12">
-                            <a href="/menu" className="text-charcoal/70 hover:text-coffee transition-colors">Menu</a>
-                            <a href="/about" className="text-charcoal/70 hover:text-coffee transition-colors">About</a>
-                            <a href="/location" className="text-charcoal/70 hover:text-coffee transition-colors">Location</a>
-                            <a href="/contact" className="text-charcoal/70 hover:text-coffee transition-colors">Contact</a>
+                            <Link href="/menu" className="text-charcoal/70 hover:text-coffee transition-colors">Menu</Link>
+                            <Link href="/about" className="text-charcoal/70 hover:text-coffee transition-colors">About</Link>
+                            <Link href="/location" className="text-charcoal/70 hover:text-coffee transition-colors">Location</Link>
+                            <Link href="/contact" className="text-charcoal/70 hover:text-coffee transition-colors">Contact</Link>
                         </div>
 
                         {/* Contact Info */}
@@ -42,7 +42,16 @@ export default function Footer() {
                 {/* Copyright */}
                 <div className="border-t border-charcoal/10 py-6">
                     <div className="text-center text-charcoal/60 text-sm">
-                        <p>© 2024 Brew & Co. All rights reserved. Made with ❤️ by <Link href="https://github.com/nareshchoudharyy" passHref> <a target="_blank" rel="noopener noreferrer" className="text-coffee">Naresh Choudhary</a> </Link></p>
+                        <p>© 2024 Brew & Co. All rights reserved. Made with ❤️ by 
+                            <Link 
+                                href="https://github.com/nareshchoudharyy" 
+                                className="text-coffee ml-1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Naresh Choudhary
+                            </Link>
+                        </p>
                     </div>
                 </div>
             </div>

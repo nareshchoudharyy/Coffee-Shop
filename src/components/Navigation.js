@@ -87,22 +87,15 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
-        <div 
-          className={`md:hidden fixed inset-0 bg-warm-beige transition-all duration-300 ${
-            isMobileMenuOpen 
-              ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-full pointer-events-none'
-          }`}
-          style={{ top: '80px' }}
-        >
-          <div className="p-6">
-            <div className="flex flex-col space-y-4">
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-warm-beige border-t border-charcoal/10">
+            <div className="py-4">
               {navItems.map((item) => (
                 <Link
                   key={item}
                   href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className={`text-lg font-body py-2 transition-colors ${
+                  className={`block py-2 px-4 ${
                     pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`)
                       ? 'text-coffee font-medium'
                       : 'text-charcoal hover:text-coffee'
@@ -114,7 +107,7 @@ export default function Navigation() {
               ))}
             </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );

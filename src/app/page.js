@@ -23,6 +23,7 @@ export default function Home() {
               fill
               priority
               className="object-cover brightness-[0.85]"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/40"></div>
           </div>
