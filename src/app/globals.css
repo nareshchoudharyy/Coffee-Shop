@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-warm-beige text-charcoal font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-medium;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-medium;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-medium;
+  }
+
+  p {
+    @apply text-charcoal/80 leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-coffee text-warm-beige rounded-lg 
+           hover:bg-gold transition-all duration-300 
+           hover:-translate-y-0.5 hover:shadow-lg font-medium;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-coffee text-coffee rounded-lg 
+           hover:bg-coffee hover:text-warm-beige transition-all duration-300 
+           hover:-translate-y-0.5 hover:shadow-lg font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-olive text-warm-beige rounded-lg 
+           hover:bg-gold transition-all duration-300 
+           hover:-translate-y-0.5 hover:shadow-lg font-medium;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white/80 rounded-lg shadow-sm hover:shadow-md 
+           transition-all duration-300 p-6;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  /* Input Styles */
+  .input-primary {
+    @apply w-full px-4 py-3 bg-white border border-olive rounded-lg 
+           focus:outline-none focus:border-coffee transition-colors
+           placeholder:text-charcoal/50;
+  }
+
+  /* Section Styles */
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-medium text-charcoal mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-charcoal/80 mb-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-espresso text-cream;
+  }
+
+  .card {
+    @apply bg-espresso/80;
+  }
+
+  .btn-primary {
+    @apply bg-gold hover:bg-coffee;
+  }
+
+  .input-primary {
+    @apply bg-espresso border-gold focus:border-cream;
+  }
+}
